@@ -4,9 +4,8 @@ from .libs import kafka_protocol as kafka
 
 def handle_client(client: socket.socket):
 	request = client.recv(1024)
-	id = int.from_bytes(request[8:12], byteorder="big")
 
-	header = kafka.HeaderV0(id)
+	header = kafka.HeaderV2.decode(request)
 	body = kafka.Body("")
 	message = kafka.Message(header, body)
 	client.sendall(message.encode())
