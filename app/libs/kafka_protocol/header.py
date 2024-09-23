@@ -1,4 +1,3 @@
-from abc import ABC, abstractproperty
 from dataclasses import dataclass
 from typing import List
 
