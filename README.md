@@ -1,61 +1,53 @@
+# Python Kafka Clone
+
+A from-scratch implementation of Kafka's core functionality in Python, using only the standard library. This project aims to replicate Kafka's message brokering capabilities and protocol, providing a learning experience and a potentially lightweight alternative for specific use cases.
+
+## Features
+
+* **Kafka Protocol Compatibility:** Adheres to the Kafka protocol for communication, ensuring interoperability with Kafka clients.
+* **Message Production and Consumption:** Implements basic message production and consumption functionality.
+* **Topic Management:** Supports topic creation and management.
+* **APIVersion Handling:** Handles APIVersion requests from clients.
+* **Fetch Command (In Progress):** Actively working on implementing the `Fetch` command for message consumption.
+
+## Future Goals
+
+* **Complete Fetch Implementation:** Add support for concurrent requests, consuming messages from disk, and handling various Fetch scenarios.
+* **Persistence:** Implement persistent storage for messages, ensuring durability.
+* **Consumer Groups and Rebalancing:** Support consumer groups for scalable message consumption and implement rebalancing for fault tolerance.
+* **Replication:** Add support for replication to ensure data availability and fault tolerance.
+* **Performance Optimization:** Optimize message handling and storage for improved performance.
+
+## Getting Started
+
+1. **Clone the Repository:**
+```bash
+git clone [invalid URL removed]
+```
+
+2. **Install Dependencies:**
+
+Ensure you have Python 3.8 and higher installed.
+
+```bash
+pip install ruff
+```
+
+3. **Run the Server:**
+```bash
+python -m app.main
+```
+
+4. **Contributing**
+Contributions are welcome! Feel free to open issues or submit pull requests. Please adhere to the project's coding style and ensure your code passes Ruff checks.
+
+5. **Disclaimer**
+This project is a work in progress and is not intended for production use. It serves as a learning exercise and a potential foundation for further development.
+
+6. **License**
+This project is licensed under the MIT License.
+
+
+
+
 [![progress-banner](https://backend.codecrafters.io/progress/kafka/41732365-cfa5-480a-ba38-3a987ee6ca43)](https://app.codecrafters.io/users/codecrafters-bot?r=2qF)
-
-This is a starting point for Python solutions to the
-["Build Your Own Kafka" Challenge](https://codecrafters.io/challenges/kafka).
-
-In this challenge, you'll build a toy Kafka clone that's capable of accepting
-and responding to APIVersions & Fetch API requests. You'll also learn about
-encoding and decoding messages using the Kafka wire protocol. You'll also learn
-about handling the network protocol, event loops, TCP sockets and more.
-
-**Note**: If you're viewing this repo on GitHub, head over to
-[codecrafters.io](https://codecrafters.io) to try the challenge.
-
-# Passing the first stage
-
-The entry point for your Kafka implementation is in `app/main.py`. Study and
-uncomment the relevant code, and push your changes to pass the first stage:
-
-```sh
-git commit -am "pass 1st stage" # any msg
-git push origin master
-```
-
-That's all!
-
-# Stage 2 & beyond
-
-Note: This section is for stages 2 and beyond.
-
-1. Ensure you have `python (3.x)` installed locally
-1. Run `./your_program.sh` to run your Kafka broker, which is implemented in
-   `app/main.py`.
-1. Commit your changes and run `git push origin master` to submit your solution
-   to CodeCrafters. Test output will be streamed to your terminal.
-
-# Troubleshooting
-
-## module `socket` has no attribute `create_server`
-
-When running your server locally, you might see an error like this:
-
-```
-Traceback (most recent call last):
-  File "/.../python3.7/runpy.py", line 193, in _run_module_as_main
-    "__main__", mod_spec)
-  File "/.../python3.7/runpy.py", line 85, in _run_code
-    exec(code, run_globals)
-  File "/app/app/main.py", line 11, in <module>
-    main()
-  File "/app/app/main.py", line 6, in main
-    s = socket.create_server(("localhost", 6379), reuse_port=True)
-AttributeError: module 'socket' has no attribute 'create_server'
-```
-
-This is because `socket.create_server` was introduced in Python 3.8, and you
-might be running an older version.
-
-You can fix this by installing Python 3.8 locally and using that.
-
-If you'd like to use a different version of Python, change the `language_pack`
-value in `codecrafters.yml`.
