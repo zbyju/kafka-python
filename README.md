@@ -5,13 +5,13 @@ A from-scratch implementation of Kafka's core functionality in Python, using onl
 ## Features
 
 * **Kafka Protocol Compatibility:** Adheres to the Kafka protocol for communication, ensuring interoperability with Kafka clients.
-* **Message Production and Consumption:** Implements basic message production and consumption functionality.
-* **Topic Management:** Supports topic creation and management.
 * **APIVersion Handling:** Handles APIVersion requests from clients.
 * **Fetch Command (In Progress):** Actively working on implementing the `Fetch` command for message consumption.
 
 ## Future Goals
 
+* **Message Production and Consumption:** Implement basic message production and consumption functionality.
+* **Topic Management:** Support topic creation and management.
 * **Complete Fetch Implementation:** Add support for concurrent requests, consuming messages from disk, and handling various Fetch scenarios.
 * **Persistence:** Implement persistent storage for messages, ensuring durability.
 * **Consumer Groups and Rebalancing:** Support consumer groups for scalable message consumption and implement rebalancing for fault tolerance.
